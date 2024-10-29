@@ -1,9 +1,9 @@
 blueprint:
-  name: Motion-activated Light
-  description: Turn on a light when motion is detected.
+  name: RGB Motion-activated Light
+  description: Turn on a rgb light when motion is detected.
   domain: automation
-  source_url: https://github.com/home-assistant/core/blob/dev/homeassistant/components/automation/blueprints/motion_light.yaml
-  author: Home Assistant
+  source_url: https://github.com/luzbrot/homeassistant-templates/blob/main/rgb_motion_light.yaml
+  author: Luzbrot
   input:
     motion_entity:
       name: Motion Sensor
