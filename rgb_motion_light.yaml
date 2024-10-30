@@ -14,6 +14,10 @@ blueprint:
               domain: binary_sensor
             - device_class: motion
               domain: binary_sensor
+    req:
+      name: Requirement
+      selector:
+        template:
     light_target:
       name: Light
       selector:
@@ -50,6 +54,8 @@ triggers:
   entity_id: !input motion_entity
   from: "off"
   to: "on"
+
+conditions: !input req
 
 actions:
   - alias: "Turn on the light"
