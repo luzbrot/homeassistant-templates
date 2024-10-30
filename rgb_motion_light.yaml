@@ -16,6 +16,7 @@ blueprint:
               domain: binary_sensor
     req:
       name: Requirement
+      default: "{{ true }}"
       selector:
         template:
     light_target:
@@ -50,20 +51,20 @@ mode: restart
 max_exceeded: silent
 
 triggers:
-  trigger: state
-  entity_id: !input motion_entity
-  from: "off"
-  to: "on"
+  - trigger: state
+    entity_id: !input motion_entity
+    from: "off"
+    to: "on"
 
 
-#conditions:
-#  - condition: and
-#    conditions:
-#      - condition: state
-#        entity_id: !input light_target
-#        state: "off"
-#      - condition: template
-#        value_template: !input req
+conditions:
+  - condition: and
+    conditions:
+      - condition: state
+        entity_id: !input light_target
+        state: "off"
+      - condition: template
+        value_template: !input req
 
 
 actions:
