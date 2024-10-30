@@ -55,14 +55,16 @@ triggers:
   from: "off"
   to: "on"
 
-conditions:
-  - condition: and
-    conditions:
-      - condition: state
-        entity_id: !input light_target
-        state: "off"
-      - condition: template
-        value_template: !input req
+
+#conditions:
+#  - condition: and
+#    conditions:
+#      - condition: state
+#        entity_id: !input light_target
+#        state: "off"
+#      - condition: template
+#        value_template: !input req
+
 
 actions:
   - alias: "Turn on the light"
